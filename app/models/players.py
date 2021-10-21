@@ -1,6 +1,6 @@
 from typing import Sequence
-from datetime import fromtimestamp
 from .db import db
+import datetime
 
 class Player(db.Model):
     __tablename__ = 'players'
@@ -17,12 +17,13 @@ class Player(db.Model):
     height = db.Column(db.String(3))
     weight = db.Column(db.String(3))
     jersey = db.Column(db.String(2))
-    birthday = db.Column(db.String(10))
+    birthdate = db.Column(db.String(10))
     rotoworld_id = db.Column(db.String(5))
+    rotowire_id = db.Column(db.String(15))
     stats_id = db.Column(db.String(5))
     stats_global_id = db.Column(db.String(7))
     espn_id = db.Column(db.String(8))
-    sportsdata_id = db.Column(db.String(30))
+    sportsdata_id = db.Column(db.String(75))
     cbs_id = db.Column(db.String(25))
     nfl_id = db.Column(db.String(35))
     fleaflicker_id = db.Column(db.String(25))
@@ -34,8 +35,8 @@ class Player(db.Model):
         name_break_index = name.find(",")
         last_name = name[0:name_break_index]
         first_name = name[(name_break_index + 1):len(name)]
-        birthday = int(self.birthday)
-        bday = fromtimestamp(birthday)
+        birthday = int(self.birthdate)
+        bday = datetime.date.fromtimestamp(birthday)
         h_int = int(self.height)
         height = str(h_int // 12) + "' " + str(h_int % 12) + '"'
         return {
