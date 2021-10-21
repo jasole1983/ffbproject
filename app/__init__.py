@@ -5,7 +5,7 @@ from flask_migrate import Migrate
 # from flask_wtf.csrf import CSRFProtect, generate_csrf
 # from flask_login import LoginManager
 from .models import db, players
-from .api.player_routes import player_routes
+from .api import player_routes
 
 from .seeds import seed_commands
 from .config import Config
