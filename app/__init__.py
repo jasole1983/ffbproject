@@ -4,8 +4,8 @@ from flask import Flask, render_template, request, redirect
 from flask_migrate import Migrate
 # from flask_wtf.csrf import CSRFProtect, generate_csrf
 # from flask_login import LoginManager
-from .models import db, players
-from .api import player_routes
+from .models import db, Player, Roster, Franchise, PlayerScore
+from .api import player_routes, player_scores_routes, franchise_routes, roster_routes
 
 from .seeds import seed_commands
 from .config import Config
@@ -21,6 +21,9 @@ app.cli.add_command(seed_commands)
 
 app.config.from_object(Config)
 app.register_blueprint(player_routes, url_prefix='/api/players')
+app.register_blueprint(player_scores_routes, url_prefix='/api/player_scores')
+app.register_blueprint(roster_routes, url_prefix='/api/rosters')
+app.register_blueprint(franchise_routes, url_prefix='/api/franchises')
 db.init_app(app)
 Migrate(app, db)
 

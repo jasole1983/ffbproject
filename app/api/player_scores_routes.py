@@ -9,8 +9,7 @@ def player_scores():
     return {'playerScores': [{player_score.player_id: player_score.to_dict} for player_score in player_scores]}
 
 @pscore_routes.route('/update/<str:week>', methods=['PUT'])
-def update_player_scores(week):
-    
+def update_player_scores(week):    
     pscores = PlayerScore.query.filter_by(week='week').all()
     for key, value in request.form:
         for pscore in pscores:

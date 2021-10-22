@@ -5,7 +5,7 @@ class Roster(db.Model):
     __tablename__ = 'rosters'
 
     id = db.Column(db.Integer, primary_key=True)
-    franchise_id = db.Column(db.String(5), db.ForeignKey('franchises.id'), nullable=False, unique=True)
+    franchise_id = db.Column(db.Integer, db.ForeignKey('franchises.id'), nullable=False, unique=True)
     week = db.Column(db.String(3), nullable=True)
     player_id = db.Column(db.string(6), db.ForeignKey('players.player_id'))
     players = db.relationship("Player", backref=db.backref('rosters', lazy=True))
