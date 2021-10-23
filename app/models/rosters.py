@@ -1,21 +1,23 @@
 from typing import Sequence
 from .db import db
+from .players import Player
 
 class Roster(db.Model):
     __tablename__ = 'rosters'
 
-    id = db.Column(db.Integer, primary_key=True)
-    franchise_id = db.Column(db.Integer, db.ForeignKey('franchises.id'), nullable=False, unique=True)
-    week = db.Column(db.String(3), nullable=True)
-    player_id = db.Column(db.string(6), db.ForeignKey('players.player_id'))
-    players = db.relationship("Player", backref=db.backref('rosters', lazy=True))
+    id = db.Column(db.String(75), primary_key=True)
+    # franchise_id = db.Column(db.String(6), db.ForeignKey('franchises.id'))
+    franchise = db.relationship("Franchise", back_populates="roster", uselist=False)
+    week = db.Column(db.String(35), nullable=True)
+    rplayers = db.relationship("Player", back_populates="roster")
+    
 
     def to_dict(self):
-        players = self.players
-        plyrs = [player.id for player in players if player.status != "INJURED_RESERVED"]
+        players = self.rplayers
+        plyrs = [player.player_id for player in players if player.status != "INJURED_RESERVED"]
         # while len(plyrs) < 46:
         #     plyrs.append('EMPTY')
-        reserves = [player.id for player in players if player.status == "INJURED_RESERVE"]
+        reserves = [player.player_id for player in players if player.status == "INJURED_RESERVE"]
         # while len(reserves) < 2:
         #     reserves.append('EMPTY')
         return {

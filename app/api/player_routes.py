@@ -1,7 +1,6 @@
 from flask import Blueprint, jsonify, request
 from app.models import Player, db
 
-
 player_routes = Blueprint('players', __name__)
 
 @player_routes.route('/')
