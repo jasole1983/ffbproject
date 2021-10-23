@@ -28,7 +28,11 @@ class Player(db.Model):
     nfl_id = db.Column(db.String(35))
     fleaflicker_id = db.Column(db.String(25))
     twitter_username = db.Column(db.String(75))
-    status = db.Column(db.String(15))
+    status = db.Column(db.Enum("FA", "ROSTER", "INJURED_RESERVE", "LOCKED", "PLAYED"))
+    starter = db.Column(db.Boolean, nullable=True, default=None)
+    roster_id = db.Column(db.Integer, db.ForeignKey('rosters.id'), nullable=True)
+    roster = db.relationship("Roster", backref=db.backref('players', lazy=True))
+    player_scores = db.relationship("PlyrScore", backref=db.backref('players', lazy=True))
 
     def to_dict(self):
         name = self.name
@@ -56,4 +60,6 @@ class Player(db.Model):
             'draftPick': self.draft_pick,
             'status': self.status,
             'twitter': self.twitter_username,
+            'starter': self.starter,
+            'rosterId': self.roster_id,
         }
