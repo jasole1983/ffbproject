@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify, request
 from app.models import Player, db
-from app.config import eng
 
 player_routes = Blueprint('players', __name__)
 
@@ -22,9 +21,3 @@ def update_player(id):
     db.session.commit()
     return {player.player_id: player.to_dict()}
 
-# @player_routes.route('/add/<int:id>', methods=['PUT'])
-# def roster_player(id):
-#     player = Player.query.get(str(id))
-#     player.status = 'ROSTER'
-#     db.session.commit()
-#     return {player.player_id: player.to_dict()}
