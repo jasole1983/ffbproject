@@ -684,7 +684,7 @@ def seed_players():
         Player(player_id="12770", name="Young, Tavon", position="CB", team="BAL", draft_year="2016", rotoworld_id="11426", draft_round="4", stats_id="29338", stats_global_id="692390", espn_id="2976244", weight="185", birthdate="763621200", draft_team="BAL", draft_pick="6", college="Temple", rotowire_id="10889", height="69", jersey="25", sportsdata_id="1880777d-9908-4a32-a492-264b4fec967d", twitter_username="Tyoung_NL", cbs_id="1998940"),
         Player(player_id="12771", name="Day, Sheldon", position="DT", team="CLE", draft_year="2016", rotoworld_id="11288", draft_round="4", stats_id="29337", stats_global_id="654869", espn_id="2976194", weight="285", birthdate="773038800", draft_team="JAC", draft_pick="5", college="Notre Dame", rotowire_id="11019", height="73", jersey="91", sportsdata_id="82fcb439-d5da-4f6b-a68c-17778fe19ce4", twitter_username="SheldonDay_91", cbs_id="1984615"),
         Player(player_id="12772", name="Murray, Eric", position="S", team="HOU", draft_year="2016", rotoworld_id="11427", draft_round="4", stats_id="29340", stats_global_id="651636", espn_id="2970716", weight="199", birthdate="757918800", draft_team="KCC", draft_pick="8", college="Minnesota", rotowire_id="11141", height="71", jersey="23", sportsdata_id="16e4ffec-959d-4210-8702-36c0bf20dda5", cbs_id="1983762")]
-    players_eleven = [
+    players_eleventy = [
         Player(player_id="12773", name="Moore, Chris", position="WR", team="HOU", draft_year="2016", rotoworld_id="11429", draft_round="4", stats_id="29341", stats_global_id="606551", espn_id="2576581", weight="200", birthdate="740206800", draft_team="BAL", draft_pick="9", college="Cincinnati", rotowire_id="10994", height="73", jersey="15", sportsdata_id="0b504d67-639b-4ba8-979a-498a3086257b", cbs_id="1871375"),
         Player(player_id="12774", name="Goodson, B.J.", position="LB", team="FA", draft_year="2016", rotoworld_id="11408", draft_round="4", stats_id="29343", stats_global_id="602095", espn_id="2576489", weight="246", birthdate="738651600", draft_team="NYG", draft_pick="11", college="Clemson", rotowire_id="11043", height="73", jersey="93", sportsdata_id="981cfb99-ff6f-452e-806c-116f56a484a5", twitter_username="B_Good_Son", cbs_id="1850728"),
         Player(player_id="12775", name="Smith, Ryan", position="CB", team="LAC", draft_year="2016", rotoworld_id="11399", draft_round="4", stats_id="29342", stats_global_id="608595", espn_id="2574666", weight="189", birthdate="747378000", draft_team="TBB", draft_pick="10", college="North Carolina Central", rotowire_id="11178", height="71", jersey="23", sportsdata_id="479b4819-3377-4255-9156-c1ce82cbf1d4", cbs_id="1888277"),
@@ -1009,7 +1009,7 @@ def seed_players():
         Player(player_id="13479", name="Davis, Michael", position="CB", team="LAC", draft_year="2017", rotoworld_id="12562", stats_id="30422", stats_global_id="750714", weight="195", draft_team="FA", birthdate="789368400", college="Brigham Young", rotowire_id="12357", height="74", jersey="43", sportsdata_id="86099301-67d0-4370-8e42-d14f34bbbb91", cbs_id="2820088"),
         Player(player_id="13488", name="Pascal, Zach", position="WR", team="IND", draft_year="2017", rotoworld_id="12635", stats_id="30502", stats_global_id="658447", weight="214", draft_team="FA", birthdate="787726800", college="Old Dominion", rotowire_id="11868", height="74", jersey="14", sportsdata_id="7fc949b6-a1cb-4f9d-a06d-b65773409a44", cbs_id="1989197"),
         Player(player_id="13491", name="Hardee, Justin", position="CB", team="NYJ", draft_year="2017", rotoworld_id="12899", stats_id="30811", stats_global_id="691750", weight="200", draft_team="FA", birthdate="760597200", rotowire_id="12442", height="73", jersey="34", sportsdata_id="35150d4a-0dca-4daa-91b3-ffc46d44d1b8", cbs_id="2820033")]
-    players_fourteen = [
+    players_fourteeny = [
         Player(player_id="13502", name="Hamilton, Justin", position="DT", team="DAL", draft_year="2016", rotoworld_id="10827", stats_id="28771", stats_global_id="608403", weight="315", draft_team="FA", birthdate="743749200", college="Louisiana", rotowire_id="10592", height="74", jersey="99", sportsdata_id="1fb9a153-f1e0-4396-81fd-c3b1d331338f", cbs_id="2174801"),
         Player(player_id="13503", name="Kemp, Marcus", position="WR", team="KCC", draft_year="2017", rotoworld_id="12790", stats_id="30682", stats_global_id="746243", weight="210", draft_team="FA", birthdate="808376400", college="Hawaii", rotowire_id="12446", height="76", jersey="85", sportsdata_id="11b9bcde-b2c8-412b-9689-4420182ca928", twitter_username="MarcusDKemp", cbs_id="2819444"),
         Player(player_id="13504", name="McRae, Tony", position="CB", team="FA", draft_year="2016", rotoworld_id="12008", stats_id="29962", stats_global_id="683649", weight="185", draft_team="FA", birthdate="736405200", college="North Carolina A&T", rotowire_id="11656", height="70", jersey="34", sportsdata_id="be4f1dbd-6ffd-4054-9f49-cc398d4ce5f3", cbs_id="2237235"),
@@ -2383,68 +2383,70 @@ def seed_players():
         Player(player_id="15618", name="Jones, Naquan", position="DT", team="TEN", draft_year="2021", stats_id="33833", status="FA", stats_global_id="0", weight="313", draft_team="FA", birthdate="886654800", college="Michigan State", rotowire_id="15243", height="75", jersey="90", sportsdata_id="728571c3-6651-4534-ad27-d86d72dc7d16"),
         ]
 
-    for player in players:
-        db.session.add(player)
-    for player in players_one:
-        db.session.add(player)
-    for player in players_two:
-        db.session.add(player)
-    for player in players_three:
-        db.session.add(player)
-    for player in players_four:
-        db.session.add(player)
-    for player in players_five:
-        db.session.add(player)
-    for player in players_six:
-        db.session.add(player)
-    for player in players_seven:
-        db.session.add(player)
-    for player in players_eight:
-        db.session.add(player)
-    for player in players_nine:
-        db.session.add(player)
-    for player in players_ten:
-        db.session.add(player)
-    for player in players_eleven:
-        db.session.add(player)
-    for player in players_twelve:
-        db.session.add(player)
-    for player in player_thirteen:
-        db.session.add(player)
-    for player in players_fourteen:
-        db.session.add(player)
-    for player in players_fifteen:
-        db.session.add(player)
-    for player in players_sixteen:
-        db.session.add(player)
-    for player in players_seventeen:
-        db.session.add(player)
-    for player in players_eighteen:
-        db.session.add(player)
-    for player in players_nineteen:
-        db.session.add(player)
-    for player in players_twenty:
-        db.session.add(player)
-    for player in players_twenty_one:
-        db.session.add(player)
-    for player in players_twenty_two:
-        db.session.add(player)
-    for player in players_twenty_three:
-        db.session.add(player)
-    for player in players_twenty_four:
-        db.session.add(player)
-    for player in players_twenty_five:
-        db.session.add(player)
-    for player in players_twenty_six:
-        db.session.add(player)
-    for player in players_twenty_seven:
-        db.session.add(player)
-    for player in players_twenty_eight:
-        db.session.add(player)
-    for player in players_twenty_nine:
-        db.session.add(player)
-    for player in players_thirty:
-        db.session.add(player)
+    # for player in players:
+    #     db.session.add(player)
+    # for player in players_one:
+    #     db.session.add(player)
+    # for player in players_two:
+    #     db.session.add(player)
+    # for player in players_three:
+    #     db.session.add(player)
+    # for player in players_four:
+    #     db.session.add(player)
+    # for player in players_five:
+    #     db.session.add(player)
+    # for player in players_six:
+    #     db.session.add(player)
+    # for player in players_seven:
+    #     db.session.add(player)
+    # for player in players_eight:
+    #     db.session.add(player)
+    # for player in players_nine:
+    #     db.session.add(player)
+    # for player in players_ten:
+    #     db.session.add(player)
+    # for player in players_eleven:
+    #     db.session.add(player)
+    # for player in players_twelve:
+    #     db.session.add(player)
+    # for player in player_thirteen:
+    #     db.session.add(player)
+    # for player in players_fourteen:
+    #     db.session.add(player)
+    # for player in players_fifteen:
+    #     db.session.add(player)
+    # for player in players_sixteen:
+    #     db.session.add(player)
+    # for player in players_seventeen:
+    #     db.session.add(player)
+    # for player in players_eighteen:
+    #     db.session.add(player)
+    # for player in players_nineteen:
+    #     db.session.add(player)
+    # for player in players_twenty:
+    #     db.session.add(player)
+    # for player in players_twenty_one:
+    #     db.session.add(player)
+    # for player in players_twenty_two:
+    #     db.session.add(player)
+    # for player in players_twenty_three:
+    #     db.session.add(player)
+    # for player in players_twenty_four:
+    #     db.session.add(player)
+    # for player in players_twenty_five:
+    #     db.session.add(player)
+    # for player in players_twenty_six:
+    #     db.session.add(player)
+    # for player in players_twenty_seven:
+    #     db.session.add(player)
+    # for player in players_twenty_eight:
+    #     db.session.add(player)
+    # for player in players_twenty_nine:
+    #     db.session.add(player)
+    # for player in players_thirty:
+    #     db.session.add(player)
+    # db.session.add_all(players_eleventy)
+    db.session.add_all(players_fourteeny)
     db.session.commit()
 
 def undo_players():

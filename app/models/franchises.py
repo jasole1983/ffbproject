@@ -1,5 +1,7 @@
 from typing import Sequence
 from .db import db
+from .posts import Post
+from .comments import Comment
 
 class Franchise(db.Model):
     __tablename__ = 'franchises'
@@ -12,8 +14,8 @@ class Franchise(db.Model):
     # draft_results = db.Column(db.Integer, db.ForeignKey('drafts.id'))
     # future_picks = db.Column(db.Integer, db.ForeignKey('future_picks.id'))
     # watch_list = db.Column(db.Integer, db.ForeignKey('watch_lists.id'))
-    # posts = db.relationship("Post", backref=db.backref('franchises', lazy=True))
-    # comments = db.relationship("Comment", backref=db.backref('franchises', lazy=True))
+    posts = db.relationship("Post", order_by=Post.create_date, back_populates="franchise")
+    comments = db.relationship("Comment", order_by=Comment.create_date, back_populates="franchise")
     # schedule_id = db.Column(db.Integer, db.ForeignKey('schedules.id'))
     # roster = db.relationship('Roster', backref=db.backref('franchises', lazy=True))
     name = db.Column(db.String(75))

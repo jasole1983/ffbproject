@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -11,12 +11,12 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      <Switch>
+      {/* <Switch>
         <Route path='/login' exact={true}>
-          <LoginForm />
+          
         </Route>
         <Route path='/sign-up' exact={true}>
-          <SignUpForm />
+          
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
@@ -27,7 +27,7 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute>
-      </Switch>
+      </Switch> */}
     </BrowserRouter>
   );
 }
