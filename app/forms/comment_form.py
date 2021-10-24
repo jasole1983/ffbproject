@@ -3,8 +3,8 @@ from wtforms import StringField, HiddenField
 from wtforms.validators import DataRequired
 import time
 
-class MakePost(FlaskForm):
-    title = StringField('title', validators=[DataRequired()])
+class MakeComment(FlaskForm):
+    post = HiddenField('post')
     body = StringField('body', validators=[DataRequired()])
     franchise = HiddenField('franchise')
     modify_date = time.time(),
