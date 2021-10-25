@@ -2,7 +2,9 @@ import React, { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Post from "../../features/posts/Posts"
 import { loadAllPosts, postSelectors } from "../../features/posts/postslice"
-import { getState } from '../../store'
+import { loadAllComments } from "../../features/comments/commentSlice"
+import Comment from "../../features/comments/Comments"
+
 
 
 export default function MessageBoard() {
@@ -10,22 +12,20 @@ export default function MessageBoard() {
 
     useEffect(() => {
         dispatch(loadAllPosts())
+        dispatch(loadAllComments())
     }, [dispatch])
 
     const posts = Object.values(useSelector((state)=>state.posts.entities))
+ 
     console.log(posts)
 
     return (
-        <div className="container bg-transparent">
-            <ul className="container-fluid bg-info">
-                <div className="accordion" id="postAccordion">
-                    { posts.map((post, index) => (
-                        <li key={post.id}>
-                            <Post post={post} index={index}/>
-                        </li>
-                    ))}
-                </div>
-            </ul>
-        </div>
+        <>
+            <div className="container-fluid bg-info">    
+                        { posts.map((post, index) => (    
+                            <Post post={post} index={index} key={post.id} />
+                            ))}
+            </div>
+        </>
     )
 }

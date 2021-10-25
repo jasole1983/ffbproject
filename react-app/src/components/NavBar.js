@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import LogoutButton from './auth/LogoutButton';
-import Button from 'react-bootstrap/Button'
+// import Logoutbutton from './auth/Logoutbutton';
+// import button from 'react-bootstrap/button'
 import miniLogo from "../images/mywildestfantasylogoRough46.jpg"
 
 const NavBar = () => {
@@ -15,24 +15,24 @@ const NavBar = () => {
       <div className="collapse navbar-collapse d-inline-block align-top navbar-button-group" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item active">
-            <a className="nav-link" href="#">
-              <Button className="btn bg-primary font-weight-bolder btn-lg " type="button">
+            <NavLink exact to='/' className="nav-link">
+              
                 League Home 
-              </Button>    
-            </a>
+                 
+            </NavLink>
           </li>
           <li className="nav-item active">
             <NavLink to='/messageboard' exact={true} className="nav-link" >
-              <Button className="btn bg-primary font-weight-bolder btn-lg " type="button">
+              
                 Message Board 
-              </Button>    
+                  
             </NavLink>
           </li>
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <Button className="btn bg-primary font-weight-bolder btn-lg " type="button">
+              
                 Manage Roster 
-              </Button>    
+                 
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <a className="dropdown-item" href="#">View Roster</a>
@@ -44,9 +44,9 @@ const NavBar = () => {
           </li>
           <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkTwo" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <Button className="btn bg-primary font-weight-bolder btn-lg" type="button">
+              
                 League Actions
-              </Button>    
+                
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkTwo">
               <a className="dropdown-item" href="#">View All Rosters</a>

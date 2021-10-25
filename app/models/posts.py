@@ -15,7 +15,7 @@ class Post(db.Model):
     modify_date = db.Column(db.String(75))
 
     def to_dict(self):
-        comments = [comment.id for comment in self.comments]
+        comments = [comment.to_dict() for comment in self.comments]
         franchise = self.franchise.name
         post = {
             "id": self.id,

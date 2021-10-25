@@ -1,37 +1,55 @@
 import React from 'react'
+import Comment from '../comments/Comments'
+import { Button } from 'react-bootstrap'
 
 
 export default function Post({ post, index }) {
     const title = post.title
     const body = post.body
     const franchise = post.franchise
-    const create = post.create_date
+    const convertedDate = post.created.slice(0,10)
+    console.log({'created': post.created})
+    const cd = new Date(convertedDate)
+    const created = cd.toUTCString()
+    const comments = post.comments
+    const collapsed = [`post${index}body`, `post${index}comments`]
 
 
     return (
-        
-        <div className="card text-white border-info bg-dark mb-3 w-50 rounded-lg">
-            <div className="card-header" id={`heading-${index}`}>
-                <button className="btn btn-link" type="button" data-toggle="collapse" data-target={`#postbody-${index}`} aria-expanded="true" aria-controls={`postbody-${index}`}>    
-                    <h5 className="card-title justify-contents-start">{title}</h5>
-                </button>
-                <h6 className="justify-contents-center">{franchise}</h6>
-                <h6 className="justify-contents-end">{create}</h6>
+        <div className="card bg-dark text-light">
+
+            <div className="card-header " id={`post${index}header`}>
+                <h6 className="mb-0 d-flex justify-content-between">
+                    <button className="btn btn-link text-decoration-none" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls={collapsed.join(' ')}>{title}</button>
+                    <span>{franchise}</span><span>{created}</span>
+                </h6>
             </div>
-            <div id={`postbody-${index}`} className="collapse show" aria-labelledby={`heading-${index}`} data-parent="postAccordion">
-                <div className="card-body">
+            <div className="collapse multi-collapse" id={`post${index}body`}>
+                <div className="card-body border border-color-warning">
                     <p className="card-text">{body}</p>
                 </div>
-                <ul className="card-body bg-gradient-primary">
-                    {comments.map((comment)=>(
-                        <li key={comment.id} className="bg-dark">
-                            <Comment comment={comment} />
-                        </li>
-                    ))}
-                </ul>
-                <a href="#" className="btn btn-primary rounded-lg">Reply</a>
             </div>
-        </div> 
+            <div className="collapse multi-collapse" id={`post${index}comments`}>
+                {comments.map((comment, idx) => (
+                    <Comment comment={comment} idx={idx} index={index} key={comment.id} />
+                    ))}
+                
+                <form className="form-group">
+                <div className="input-group">
+                    <input type="text" className="form-control" aria-label="Comment on this Post"/>
+                    <div className="input-group-append">
+                        <button className="btn btn-primary rounded" type="button">REPLY</button>
+                    </div>
+                </div>
+                <div className="container bg-transparent mb-3">
+                    <input type="hidden" id="TBD"/>
+                    <input type="hidden" id="TBD"/>
+                    <input type="hidden" id="TBD"/>
+                </div>
+                </form>
+            </div>
+        </div>
+             
         
     )
 }

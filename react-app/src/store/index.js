@@ -1,6 +1,7 @@
 // import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import postReducer from '../features/posts/postslice'
+import commentReducer from '../features/comments/commentSlice'
 
 
 // const reducer = combineReducers({  
@@ -13,6 +14,7 @@ import postReducer from '../features/posts/postslice'
 export const store = configureStore({
   reducer:{
     posts: postReducer,
+    comments: commentReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
   })
