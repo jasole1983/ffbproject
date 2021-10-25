@@ -13,7 +13,8 @@ def posts():
     load all posts
     '''
     posts = Post.query.all()
-    return {'posts': [{post.id: post.to_dict()} for post in posts]}
+    print(posts)
+    return {"posts":[post.to_dict() for post in posts]}
 
 @post_routes.route('/', methods=['POST'])
 def create_post():
@@ -31,7 +32,7 @@ def create_post():
         )
         db.session.add(post)
         db.session.commit()
-        return {'post':{post.id: post.to_dict()}}
+        return {post.id: post.to_dict()}
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 @post_routes.route('/<int:id>', methods=['PUT', 'DELETE'])
@@ -39,18 +40,18 @@ def update_post(id):
     '''
     modify existing Post
     '''
-    post = Post.query.get(id)
+    p = Post.query.get(id)
     if request.method == 'DELETE':
-        list = [{'post': post.id}]
-        for comment in post.comments:
+        list = [{'post': p.id}]
+        for comment in p.comments:
             list.append(delete_comment(comment.id))
-        db.session.delete(post)
+        db.session.delete(p)
         db.session.commit()
-        return 
+        return {'Deleted Items': list}
     elif request.method == 'PUT':
         for key, val in request.body:
-            setattr(post, key, val)
+            setattr(p, key, val)
         db.session.commit()
-        return {'post': {post.id: post.to_dict()}}
+        return {'post': p.to_dict()}
     else:
         return {'errors': 'Error! Please double check fetch method'}, 401

@@ -10,17 +10,20 @@ class Post(db.Model):
     franchise = db.relationship("Franchise", back_populates="posts")
     title = db.Column(db.String(225))
     body = db.Column(db.Text)
-    comments = db.relationship("Comment", order_by=Comment.create_date, back_populates="post")
+    comments = db.relationship("Comment", back_populates="post")
     create_date = db.Column(db.String(75))
     modify_date = db.Column(db.String(75))
 
     def to_dict(self):
-        return {
+        comments = [comment.id for comment in self.comments]
+        franchise = self.franchise.name
+        post = {
             "id": self.id,
-            "franchise": self.franchise,
+            "franchise": franchise,
             "title": self.title,
             "body": self.body,
-            "comments": self.comments,
+            "comments": comments,
             "created": self.create_date,
             "modified": self.modify_date,
         }
+        return post

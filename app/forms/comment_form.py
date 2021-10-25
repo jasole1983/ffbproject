@@ -7,4 +7,4 @@ class MakeComment(FlaskForm):
     post = HiddenField('post')
     body = StringField('body', validators=[DataRequired()])
     franchise = HiddenField('franchise')
-    modify_date = time.time(),
+    modify_date = time.time()
